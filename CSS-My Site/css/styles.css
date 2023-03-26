@@ -242,4 +242,16 @@ hr {
         top: 40px;
         right: 0;
     }
+
+    .skill-row {
+        width: 90%;
+    }
+    
+    .centered_text {
+        width: 90%;
+    }
+    
+    .centered_text2 {
+        width: 90%;
+    }
 }
