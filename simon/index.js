@@ -25,8 +25,6 @@ $(".btn").click(function (e) {
                 levelProgress();
             }
             else {
-                console.log("next buffer");
-                console.log(bufferCount);
                 // awaiting next buffer
                 bufferCount += 1
 
