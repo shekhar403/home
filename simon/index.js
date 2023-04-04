@@ -3,45 +3,53 @@ var bufferCount = 0;
 var colouredButtonsArray = ["red", "blue", "yellow", "green"];
 var colorBuffer = [];
 
-$(".btn").click(function (e) { 
-   e.currentTarget.classList.add("pressed");
-   setTimeout(function() {
-    e.currentTarget.classList.remove("pressed");
-   }, 100);
+$(".btn").click(function (e) {
+    e.currentTarget.classList.add("pressed");
+    setTimeout(function () {
+        e.currentTarget.classList.remove("pressed");
+    }, 100);
 
-   if (colorBuffer.length === 0) {
-    gameOver();
-   }
-   else {
-    playAudio(this.classList[1]);
+    if (colorBuffer.length === 0) {
+        gameOver();
+    }
+    else {
+        playAudio(this.classList[1]);
 
-    if (this.classList[1] === colorBuffer[bufferCount]) {
-        if (bufferCount === colorBuffer.length - 1) {
-            // level successful
-            levelProgress();
+        if (this.classList[1] === colorBuffer[bufferCount]) {
+            if (bufferCount === colorBuffer.length - 1) {
+                // level successful
+                levelProgress();
+            }
+            else {
+                console.log("next buffer");
+                console.log(bufferCount);
+                // awaiting next buffer
+                bufferCount += 1
+
+            }
         }
         else {
-            console.log("next buffer");
-            console.log(bufferCount);
-            // awaiting next buffer
-            bufferCount += 1
-
+            // game over
+            // Game Over, Press Any Key to Restart
+            gameOver();
         }
-   }
-   else {
-    // game over
-    // Game Over, Press Any Key to Restart
-    gameOver();
-   }
-   }
+    }
 });
 
-$(document).keypress(function (e) { 
-    if ($("#level-title").text() === "Press A Key to Start" || $("#level-title").text() === "Game Over, Press Any Key to Restart") {
+$(document).keypress(function (e) {
+    if ($("#level-title").text() === "Press Restart button or any Key to Start" || $("#level-title").text() === "Game Over, Press Restart button or any Key to Restart") {
         $("#level-title").text("Level " + levelCount);
         addANewColor();
     }
-    
+
+});
+
+$(".start-btn").click(function (e) {
+    levelCount = 1;
+    bufferCount = 0;
+    colorBuffer = [];
+    $("#level-title").text("Level " + levelCount);
+    addANewColor();
 });
 
 
@@ -53,9 +61,9 @@ function playAudio(colorName) {
 
 function gameOver() {
     playAudio("wrong");
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    $("#level-title").text("Game Over, Press Restart button or any Key to Restart");
     $("body").css("backgroundColor", "red");
-    setTimeout(function() {
+    setTimeout(function () {
         $("body").css("backgroundColor", "#011F3F");
     }, 200);
 }
@@ -64,7 +72,7 @@ function levelProgress() {
     bufferCount = 0
     levelCount += 1;
     $("#level-title").text("Level " + levelCount);
-    setTimeout(function() {
+    setTimeout(function () {
         addANewColor();
     }, 1000);
 }
