@@ -3,6 +3,10 @@ var bufferCount = 0;
 var colouredButtonsArray = ["red", "blue", "yellow", "green"];
 var colorBuffer = [];
 
+for ( var i = 0; i < colouredButtonsArray.length; i++) {
+    playAudio(colouredButtonsArray[i]);
+}
+
 $(".btn").click(function (e) {
     e.currentTarget.classList.add("pressed");
     setTimeout(function () {
@@ -30,14 +34,14 @@ $(".btn").click(function (e) {
         }
         else {
             // game over
-            // Game Over, Press Any Key to Restart
+            // Game Over, Press Any Key to Play
             gameOver();
         }
     }
 });
 
 $(document).keypress(function (e) {
-    if ($("#level-title").text() === "Press Restart button or any Key to Start" || $("#level-title").text() === "Game Over, Press Restart button or any Key to Restart") {
+    if ($("#level-title").text() === "Press Play button or any Key to Start" || $("#level-title").text() === "Game Over, Press Play button or any Key to Play") {
         $("#level-title").text("Level " + levelCount);
         addANewColor();
     }
@@ -61,7 +65,7 @@ function playAudio(colorName) {
 
 function gameOver() {
     playAudio("wrong");
-    $("#level-title").text("Game Over, Press Restart button or any Key to Restart");
+    $("#level-title").text("Game Over, Press Play button or any Key to Play");
     $("body").css("backgroundColor", "red");
     setTimeout(function () {
         $("body").css("backgroundColor", "#011F3F");

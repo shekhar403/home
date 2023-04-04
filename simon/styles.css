@@ -18,13 +18,13 @@ body {
 }
 
 .start-btn {
-  margin: 55px;
+  vertical-align: middle;
   display: inline-block;
-  height: 25px;
+  height: 50px;
   padding-top: 5px;
   width: 200px;
-  border: 3px solid black;
-  border-radius: 20%;
+  border: 2px solid blueviolet;
+  border-radius: 8%;
   background-color: darkseagreen;
   font-size: 1.1rem;
   font-family: 'Press Start 2P', cursive;
