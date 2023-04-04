@@ -32,7 +32,6 @@ $(".btn").click(function (e) {
         }
         else {
             // game over
-            // Game Over, Press Any Key to Play
             gameOver();
         }
     }
