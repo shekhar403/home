@@ -255,3 +255,37 @@ hr {
         width: 90%;
     }
 }
+
+
+/* Navigation Bar */
+
+.navbar {
+    padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+}
+
+.nav-item {
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #66BFBF;
+}
+
+.nav-link:focus {
+    color: darkolivegreen;
+}
+
+.nav-link:hover {
+    color: darkolivegreen;
+}
+
+.navbar-toggler {
+    background-color: #11cdd4;
+}
