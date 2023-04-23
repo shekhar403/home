@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Shekhar Dora">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>JavaScript Object</title>
+
+    <!-- Font Awesome js -->
+    <script src="https://kit.fontawesome.com/07676bcedd.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="blog2.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/favicon.ico" sizes="180x180">
+    <link rel="icon" href="assets/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/favicon.ico" sizes="16x16" type="image/png">
+    <link rel="mask-icon" href="assets/favicon.ico" color="#712cf9">
+    <link rel="icon" href="assets/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column">
+        <div class="row">
+            <div class="col-md-3 d-flex flex-column flex-shrink-0 p-3 fullheight" id="sidebar">
+                <a href="#content" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"><span
+                        class="fs-4">Javascript Object</span><i class="fa-regular fa-rectangle-xmark fa-2xl"
+                        id="close_button"></i></a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item"><a href="#introduction" class="nav-link active" aria-current="page"><i
+                                class="fa-regular fa-hand-point-right"></i>Introduction</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>What's an
+                            Object?</a></li>
+                    <li><a href="#creation" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Javascript
+                            object creation</a></li>
+                    <li><a href="#addition" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Adding a
+                            property</a></li>
+                    <li><a href="#addition" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Adding a
+                            property</a></li>
+                    <li><a href="#deletion" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Deleting a
+                            property</a></li>
+                    <li><a href="#nesting" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Nesting
+                            Objects</a></li>
+                    <li><a href="#array_conversion" class="nav-link"><i class="fa-regular fa-hand-point-right"></i>Converting Object to Array</a></li>
+                    <li><a href="#conclusion" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Conclusion</a></li>
+                </ul>
+                <hr>
+            </div>
+
+            <div class="col-md-9 overflow-auto pt-3 ps-5 pe-5 fullheight" id="content">
+                <section id="sidebar_button" class="d-none mb-5"><i class="fa-solid fa-list fa-2xl"></i></section>
+                <section id="introduction">
+                    <h2>Introduction:</h2>
+                    <h3 class="fw-normal">As one of the most popular programming languages in the world, JavaScript is
+                        widely used to create interactive and dynamic web pages. One of the key concepts in JavaScript
+                        is the use of objects, which allow developers to create complex data structures and represent
+                        them in a way that is easy to manipulate.</h3>
+                </section>
+                <section id="about">
+                    <h2>What is an Object?</h2>
+                    <p>When an object is created in JavaScript, it is represented internally as a collection of
+                        key-value pairs stored in a data structure called a hash table. This data structure is also
+                        known as an associative array, dictionary, or map.</p>
+                    <p>Hash tables are used to store data in a way that allows for fast lookup and retrieval of values.
+                        In JavaScript, the hash table is implemented using an object prototype, which is a template for
+                        creating objects.</p>
+                    <p>When you create a new object in JavaScript, it is created based on the prototype, which defines
+                        the structure and behavior of the object. This means that objects in JavaScript are not just a
+                        collection of properties, but also have their own internal representation that defines how they
+                        behave and interact with other objects.</p>
+                    <p>One of the benefits of using objects in JavaScript is that they can be easily modified and
+                        updated. You can add or remove properties from an object, change the value of existing
+                        properties, or even nest objects within other objects.</p>
+                </section>
+                <section id="creation">
+                    <h2>Javascript object creation:</h2>
+                    <h3 class="fw-normal">In JavaScript, an object is a collection of properties, which can be thought
+                        of as key-value pairs. Each property has a name (or key) and a value, which can be any data
+                        type, including strings, numbers, arrays, or even other objects. Here's an example of how an
+                        object can be created in JavaScript:</h3>
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Creating Objects in JavaScript</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol class="mt-3 mb-4">
+                                <li><label class="card-title"><span class="code_text">const</span> <span
+                                            class="variable_text">person</span>&nbsp;=&nbsp;{</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">name</span>&nbsp;:&nbsp; '<span class="string_text">John
+                                            Doe</span>',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">age</span>&nbsp;:&nbsp;<span
+                                            class="string_text">30</span>,</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">email</span>&nbsp;:&nbsp; '<span
+                                            class="string_text">johndoe@example.com</span>',</label></li>
+                                <li><label class="card-title">};</label></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <p>In this example, we've created an object called person with three properties: name, age, and
+                        email. The value of each property is a string or a number.</p>
+                </section>
+                <section id="addition">
+                    <h2>Adding a property:</h2>
+                    <h3 class="fw-normal">We can add any number of properties as a key-value pair to an object in
+                        javascript. Here's an example of how an
+                        property can be added to an existing object in JavaScript:</h3>
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Adding a property to an object in JavaScript</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol class="mt-3 mb-4">
+                                <li><label class="card-title"><span class="variable_text">person</span>.<span
+                                            class="key_text">id</span>&nbsp;=&nbsp;1234567890</label>;</li>
+                                <li><label class="card-title"><span class="code_text">console.log(<span
+                                                class="variable_text">person</span>)</span></label>;</li>
+                                <li></li>
+                                <li><label class="card-title"> output:</label></li>
+                                <li><label class="card-title"> {</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John Doe',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;age: 30,</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;email:
+                                        'johndoe@example.com',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;id: 1234567890</label></li>
+                                <li><label class="card-title"> }</label></li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section id="deletion">
+                    <h2>Deleting a property:</h2>
+                    <h3 class="fw-normal">We can delete any existing property of an object in
+                        javascript. Here's an example of how an
+                        property can be deleted from an object in JavaScript:</h3>
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Deleting a property from an object in JavaScript</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol class="mt-3 mb-4">
+                                <li><label class="card-title"><span class="code_text">delete</span> <span
+                                            class="variable_text">person</span>.<span
+                                            class="key_text">id</span></label>;</li>
+                                <li><label class="card-title"><span class="code_text">console.log(<span
+                                                class="variable_text">person</span>)</span></label>;</li>
+                                <li></li>
+                                <li><label class="card-title"> output:</label></li>
+                                <li><label class="card-title"> {</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John Doe',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;age: 30,</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;email:
+                                        'johndoe@example.com',</label></li>
+                                <li><label class="card-title"> }</label></li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section id="nesting">
+                    <h2>Nesting Objects:</h2>
+                    <h3 class="fw-normal">We can also add one object as property of another object. Here's an example of
+                        how an
+                        object can be added to another object in JavaScript:</h3>
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Deleting a property from an object in JavaScript</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol class="mt-3 mb-4">
+                                <li><label class="card-title"><span class="variable_text">person</span>.<span
+                                            class="key_text">address</span>&nbsp;=&nbsp;{</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">street</span>&nbsp;:&nbsp; '<span class="string_text">123
+                                            Main St</span>',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">city</span>&nbsp;:&nbsp; '<span
+                                            class="string_text">Anytown</span>',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">state</span>&nbsp;:&nbsp; '<span
+                                            class="string_text">CA</span>',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="key_text">zip</span>&nbsp;:&nbsp; '<span
+                                            class="string_text">12345</span>'</label></li>
+                                <li><label class="card-title">};</label></li>
+
+                                <li></li>
+                                <li><label class="card-title"> output:</label></li>
+                                <li><label class="card-title"> {</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;name: 'John Doe',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;age: 30,</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;email:
+                                        'johndoe@example.com',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;address: {</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;street:
+                                        '123 Main St',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city:
+                                        'Anytown',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state:
+                                        'CA',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zip:
+                                        '12345',</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;}</label></li>
+                                <li><label class="card-title">}</label></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <p>In this example, we've created an object and added it to the person object with address as a key.
+                        Now to access state property of address object we can use the dot notation,
+                        <em>person.address.state</em>
+                    </p>
+                </section>
+                <section id="array_conversion">
+                    <h2>Convert object to array</h2>
+                    <h3 class="fw-normal">To convert an object to an array we use one of three methods: Object.keys(),
+                        Object.values(), and Object.entries(). The keys method gives all the keys of an object as an one
+                        dimensional array. The values method gives all the values of an object as an one dimensional
+                        array. The entries method gives all key-value pairs of an object as a two dimensional
+                        array. Here's an example of
+                        how an
+                        object can be converted to arrays using different methods:</h3>
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Converting Objects to array in JavaScript</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol class="mt-3 mb-4">
+                                <li><label class="card-title"><span class="code_text">console.log(Object.keys(<span
+                                                class="variable_text">person</span>))</span></label>;</li>
+                                <li><label class="card-title">Output:</label></li>
+                                <li><label class="card-title">[ 'name', 'age', 'email' ]</label></li>
+                                <li></li>
+                                <li><label class="card-title"><span class="code_text">console.log(Object.values(<span
+                                                class="variable_text">person</span>))</span></label>;</li>
+                                <li><label class="card-title">Output:</label></li>
+                                <li><label class="card-title">[ 'John Doe', 30, 'johndoe@example.com' ]</label></li>
+                                <li></li>
+                                <li><label class="card-title"><span class="code_text">console.log(Object.entries(<span
+                                                class="variable_text">person</span>))</span></label>;</li>
+                                <li><label class="card-title">Output:</label></li>
+                                <li><label class="card-title">[</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;[ 'name', 'John Doe' ],</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;[ 'age', 30 ],</label></li>
+                                <li><label class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;[ 'email', 'johndoe@example.com' ]</label></li>
+                                <li><label class="card-title">]</label></li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section id="conclusion">
+                    <h2>Conclusion:</h2>
+                    <h3 class="fw-normal">In conclusion, objects are a fundamental concept in JavaScript, providing a
+                        powerful way to organize and manipulate data in complex ways. Understanding how objects are
+                        represented internally in JavaScript can help you write more efficient and effective code, and
+                        enable you to create more complex and sophisticated web applications.</h3>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="blog2.js" charset="utf-8"></script>
+</body>
+
+</html>
