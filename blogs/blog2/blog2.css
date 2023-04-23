@@ -59,6 +59,7 @@ fa-list {
     background-color: #097e7e;
     color: #F2FBFF;
     padding: 0px;
+    overflow: auto;
 }
 
 ol {
