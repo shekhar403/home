@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Shekhar Dora">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>HTTP 1.1 vs HTTP 2</title>
+
+    <!-- Font Awesome js -->
+    <script src="https://kit.fontawesome.com/07676bcedd.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="blog1.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/favicon.ico" sizes="180x180">
+    <link rel="icon" href="assets/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/favicon.ico" sizes="16x16" type="image/png">
+    <link rel="mask-icon" href="assets/favicon.ico" color="#712cf9">
+    <link rel="icon" href="assets/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column">
+        <div class="row">
+            <div class="col-md-3 d-flex flex-column flex-shrink-0 p-3 fullheight" id="sidebar">
+                <a href="#content" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"><span class="fs-4">HTTP 1.1 vs HTTP 2</span><i class="fa-regular fa-rectangle-xmark fa-2xl" id="close_button"></i></a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item"><a href="#introduction" class="nav-link active" aria-current="page"><i
+                                class="fa-regular fa-hand-point-right"></i>Introduction</a></li>
+                    <li><a href="#multiplexing" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Multiplexing</a></li>
+                    <li><a href="#protocol" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Binary Protocol</a></li>
+                    <li><a href="#compression" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Header Compression</a></li>
+                    <li><a href="#server" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Server push</a></li>
+                    <li><a href="#connection" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Connection Management</a></li>
+                    <li><a href="#conclusion" class="nav-link"><i
+                                class="fa-regular fa-hand-point-right"></i>Conclusion</a></li>
+                </ul>
+                <hr>
+            </div>
+            
+            <div class="col-md-9 overflow-auto pt-3 ps-5 pe-5 fullheight" id="content">
+                <section id="sidebar_button" class="d-none mb-5"><i class="fa-solid fa-list fa-2xl"></i></section>
+                <section id="introduction">
+                    <h2>Introduction:</h2>
+                    <h3 class="fw-normal">HTTP (Hypertext Transfer Protocol) is the underlying protocol that powers the
+                        World Wide Web. It is a request-response protocol that enables communication between clients and
+                        servers. Over the years, HTTP has evolved and seen several versions. The two most widely used
+                        versions of HTTP are HTTP1.1 and HTTP2. In this blog, we will explore the differences between
+                        HTTP1.1 and HTTP2.</h3>
+                </section>
+                <section id="multiplexing">
+                    <h2>Multiplexing:</h2>
+                    <h3 class="fw-normal">One of the significant differences between HTTP1.1 and HTTP2 is that
+                        HTTP2 supports multiplexing, while HTTP1.1 doesn't. Multiplexing allows multiple
+                        requests and responses to be sent and received concurrently over a single connection.
+                        This feature significantly improves the performance of web applications, especially in
+                        scenarios where multiple requests are made to the same server. In contrast, HTTP1.1
+                        requires multiple connections for parallelism, which can be inefficient and lead to
+                        increased latency.</h3>
+                </section>
+                <section id="protocol">
+                    <h2>Binary protocol:</h2>
+                    <h3 class="fw-normal">HTTP1.1 uses a text-based protocol, which is human-readable but not as
+                        efficient as a binary protocol. In contrast, HTTP2 uses a binary protocol that compresses
+                        headers and payloads, reducing the overall size of the data transmitted between the client and
+                        the server. The binary format of HTTP2 also allows for more efficient parsing, resulting in
+                        faster processing of requests and responses.</h3>
+                </section>
+                <section id="compression">
+                    <h2>Header Compression:</h2>
+                    <h3 class="fw-normal">HTTP1.1 doesn't support header compression, resulting in redundant data being
+                        transmitted between the client and the server. HTTP2 addresses this issue by using the HPACK
+                        compression algorithm to compress headers, reducing the size of the data transmitted over the
+                        network. This feature significantly improves the performance of web applications, especially in
+                        scenarios where multiple requests are made to the same server.</h3>
+                </section>
+                <section id="server">
+                    <h2>Server push:</h2>
+                    <h3 class="fw-normal">HTTP2 introduces the concept of server push, which allows the server to send
+                        additional resources to the client without the client requesting them explicitly. This feature
+                        eliminates the need for the client to make multiple requests to the server for resources
+                        required to render a page, resulting in faster page load times.</h3>
+                </section>
+                <section id="connection">
+                    <h2>Connection Management:</h2>
+                    <h3 class="fw-normal">HTTP1.1 requires the client to open and close connections for each request and
+                        response, resulting in increased latency and overhead. In contrast, HTTP2 uses a single
+                        connection to the server, reducing the overhead associated with establishing and maintaining
+                        multiple connections. This feature significantly improves the performance of web applications,
+                        especially in scenarios where multiple requests are made to the same server.</h3>
+                </section>
+                <section id="conclusion">
+                    <h2>Conclusion:</h2>
+                    <h3 class="fw-normal">In conclusion, HTTP2 is a significant improvement over HTTP1.1, addressing
+                        many of the performance issues and limitations of the previous version. The introduction of
+                        multiplexing, binary protocol, header compression, server push, and connection management make
+                        HTTP2 more efficient, faster, and more reliable than HTTP1.1. Therefore, it is recommended to
+                        use HTTP2 for developing high-performance web applications.</h3>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="blog1.js" charset="utf-8"></script>
+</body>
+</html>

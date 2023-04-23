@@ -1,0 +1,66 @@
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: sans-serif;
+    color: #66BFBF;
+    background-color: #F2FBFF;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 4rem;
+}
+
+h3 {
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+i {
+    padding-right: 10px;
+}
+
+#close_button {
+    position: absolute;
+    left: 300px;
+}
+
+a {
+    color: #11999E !important;
+}
+
+a:hover, a:focus {
+    color: darkolivegreen !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: whitesmoke !important;
+}
+
+#content {
+    color: #097e7e;
+}
+fa-list {
+    padding-right: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    /* styles for phones go here */
+    .fullheight {
+        overflow: hidden;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+}
+
