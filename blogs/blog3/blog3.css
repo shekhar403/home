@@ -1,0 +1,106 @@
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: sans-serif;
+    color: #66BFBF;
+    background-color: #F2FBFF;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 4rem;
+}
+
+h3, p {
+    margin-bottom: 50px;
+    font-weight: normal;
+    font-size: calc(1.3rem + .6vw);
+    line-height: 1.2;
+}
+
+i {
+    padding-right: 10px;
+}
+
+#close_button {
+    position: absolute;
+    left: 300px;
+}
+
+a {
+    color: #11999E !important;
+}
+
+a:hover, a:focus {
+    color: darkolivegreen !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: whitesmoke !important;
+}
+
+#content {
+    color: #097e7e;
+}
+
+fa-list {
+    padding-right: 20px;
+}
+
+.card-body {
+    background-color: #097e7e;
+    color: #F2FBFF;
+    padding: 0px;
+    overflow: auto;
+}
+
+ol {
+    margin: 0px;
+    font-size: 1.2rem;
+}
+
+.string_text {
+    color: chartreuse;
+}
+
+.key_text {
+    color: antiquewhite;
+}
+
+.variable_text {
+    color: rgb(212, 234, 99);
+}
+
+.code_text {
+    color: rgb(3, 247, 255);
+}
+.card-header {
+    background-color: #389a9a;
+    color: #F2FBFF;
+}
+
+label {
+    padding-left: 50px;
+    padding-top: 3px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    /* styles for phones go here */
+    .fullheight {
+        overflow: hidden;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+}
+
