@@ -1,0 +1,149 @@
+body {
+    background-image: linear-gradient(135deg, #FDD819 10%, #E80505 100%);
+    color: rgb(244, 206, 193);
+}
+
+.nav-bar {
+    background-color: #ff4400;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    margin: 0 !important;
+    height: 20px;
+}
+
+.nav_title {
+    float: left;
+    color: white;
+    margin-top: 0;
+}
+
+.menu_button {
+    float: right;
+    display: block;
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0px;
+    background-color: #ff4400;
+    border: 1px solid black;
+    top: 0px;
+}
+
+a {
+    display: block;
+    border-style: none;
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu_button:hover .dropdown-content {
+    display: block;
+}
+
+.menu-items {
+    display: none;
+    float: right;
+}
+
+.menu-link {
+    display: inline;
+}
+
+a:hover {
+    background-color: white;
+    color: #ff4400;
+}
+
+#portfolio-image {
+    display: block;
+    margin: auto;
+    width: 60%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.profile {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin: 100px auto;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-description {
+   width: 600px;
+    height: 200px;
+    overflow: auto;
+    display: inline;
+}
+
+.profile-description::-webkit-scrollbar {
+    width: 12px;
+}
+
+.profile-description::-webkit-scrollbar-track {
+    background: orange;
+}
+
+.profile-description::-webkit-scrollbar-thumb {
+    background-color: #E80505;
+    border-radius: 20px;
+    border: 3px solid orange;
+}
+
+.profile-image {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.skill-image {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+}
+
+.grid-item {
+    background-color: #195d94;
+    font-size: 34px;
+    text-align: center;
+    border: 2px solid #FDD819;
+}
+
+.grid-item2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.grid-item3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+
+@media screen and (min-width: 580px) {
+    .menu_button {
+        display: none;
+    }
+
+    .menu-items {
+        display: block;
+    }
+}
