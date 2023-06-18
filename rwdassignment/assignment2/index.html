@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="border: 2px solid black; height: 30rem; width: 40rem; overflow: auto;">
+    <h1 style="text-align: center;">Event 1</h1>
+    <h3 style="text-align: center;">Number of available seats : 23</h3>
+    <div style="display: inline-flex; margin: 20px; padding: 20px; border: 2px solid black;">
+        <img style="height: 240px; width: 160px; border-radius: 200%;" src="https://shekhar403.github.io/home/profile/icons/ios_logo.png" alt="no image">
+    </div>
+    <div style="display: inline-flex; align-items: end; padding: 20px;  flex-direction: column; float: right; margin: 20px; ">
+         <div class="input-field" style="display: contents;">
+            <div style="margin-bottom: 20px;">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" />
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="phone">Phone No.: </label>
+                <input type="tel" name="phone" id="phone" />
+            </div>
+            <div style="margin-bottom: 20px; width: 285px;">
+                <label for="seat">Number of Seats: </label>
+                <input type="number" name="seat" id="seat" step="1" max="23" min="0" value="2" />
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="name2">Attendee 2: </label>
+                <input type="text" name="name2" id="name2" />
+            </div>
+            <div style="margin-bottom: 20px; width: 250px;">
+                <input type="submit" name="submit" id="submit" value="Submit" style="margin-right: 40px;"/>
+                <input type="button" name="cancel" id="cancel" value="cancel" />
+            </div>
+        </div>
+        
+    </div>
+       
+   </div>
+</body>
+</html>
