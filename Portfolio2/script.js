@@ -6,23 +6,16 @@ function generateStars() {
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement('div');
       star.classList.add('star' + (i % 3));
-      star.style.top = getRandomVerticalPosition() + 'vh';
-      star.style.left = getRandomHorizontalPosition() + 'vw';
+      star.style.top = getRandomPosition() + 'vh';
+      star.style.left = getRandomPosition() + 'vw';
       starsContainer.appendChild(star);
     }
   }
   
   // Get random position between 0 and 100
-  function getRandomVerticalPosition() {
+  function getRandomPosition() {
     return Math.random() * 100;
   }
-  
-  function getRandomHorizontalPosition() {
-    return Math.random() * 100;
-  }
-
-  // Generate stars on page load
-//   window.addEventListener('load', generateStars);
 
 generateStars();
 
