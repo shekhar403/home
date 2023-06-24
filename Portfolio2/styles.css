@@ -15,12 +15,10 @@ body {
 @keyframes slidein {
     from {
         margin-top: 10%;
-        height: 200%;
     }
 
     to {
         margin-top: 0%;
-        height: 100%;
     }
 }
 
