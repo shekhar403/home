@@ -11,7 +11,7 @@ const inputs = Array.from(document.getElementsByTagName("input"))
 inputs.forEach((element, index) => {
 
     if (index === 0) {
-        element.style.marginBottom = 50 + "px";
+        element.style.marginBottom = "50px";
     }
 
     console.log(element.value)
