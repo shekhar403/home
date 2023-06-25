@@ -9,10 +9,10 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    animation: 3s infinite alternate slidein;
+    animation: 3s infinite alternate bouncing;
 }
 
-@keyframes slidein {
+@keyframes bouncing {
     from {
         margin-top: 10%;
     }
