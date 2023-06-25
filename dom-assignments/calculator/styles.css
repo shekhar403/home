@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    background-color: gainsboro;
+    border-style: groove;
+    border-width: 2px;
+    box-shadow: 2px 3px 4px black;
+    padding: 20px;
+}
+
+hr {
+    border-color: white;
+    border-width: 1px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+input {
+    height: 50px;
+}
