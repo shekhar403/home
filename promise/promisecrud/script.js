@@ -1,4 +1,6 @@
-let apiPost = async (url, p_name, p_age, p_color) => {
+const userId = "fc073a283b6942638df4888ae38cb508";
+
+const apiPost = async (url, p_name, p_age, p_color) => {
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -14,7 +16,7 @@ let apiPost = async (url, p_name, p_age, p_color) => {
 
         if (response.ok) {
             console.log("Object added successfully");
-            apiRead("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns")
+            apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
         }
         else {
             console.log("Error adding object. Status:", response.status);
@@ -25,7 +27,7 @@ let apiPost = async (url, p_name, p_age, p_color) => {
 };
 
 
-let apiRead = async (url) => {
+const apiRead = async (url) => {
     try {
         await fetch(url)
             .then(response => response.json())
@@ -37,7 +39,7 @@ let apiRead = async (url) => {
 
 }
 
-let apiUpdate = async (link, objectId, p_name, p_age, p_color) => {
+const apiUpdate = async (link, objectId, p_name, p_age, p_color) => {
     const url = `${link}/${objectId}`;
 
     try {
@@ -55,7 +57,7 @@ let apiUpdate = async (link, objectId, p_name, p_age, p_color) => {
 
         if (response.ok) {
             console.log("Object updated successfully");
-            apiRead("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns")
+            apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
         }
         else {
             console.log("Error updating object. Status:", response.status);
@@ -65,7 +67,7 @@ let apiUpdate = async (link, objectId, p_name, p_age, p_color) => {
     }
 };
 
-let apiDelete = async (link, objectId) => {
+const apiDelete = async (link, objectId) => {
     const url = `${link}/${objectId}`;
 
     try {
@@ -75,7 +77,7 @@ let apiDelete = async (link, objectId) => {
 
         if (response.ok) {
             console.log("Object deleted successfully.");
-            apiRead("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns")
+            apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
         } else {
             console.log("Error deleting object. Status:", response.status);
         }
@@ -87,13 +89,13 @@ let apiDelete = async (link, objectId) => {
 
 
 // create
-// apiPost("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns","Adarsh",25,"brown")
+// apiPost("https://crudcrud.com/api/"+ userId +"/unicorns","Adarsh",25,"brown")
 
 // Read
-// apiRead("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns")
+// apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
 
 // update
-// apiUpdate("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns","64a956e4c632b703e8309e8b","Rashmita",25,"pink");
+// apiUpdate("https://crudcrud.com/api/"+ userId +"/unicorns","64a956e4c632b703e8309e8b","Rashmita",25,"pink");
 
 // delete
-// apiDelete("https://crudcrud.com/api/fc073a283b6942638df4888ae38cb508/unicorns", '64a94a6ec632b703e8309e48')
+// apiDelete("https://crudcrud.com/api/"+ userId +"/unicorns", '64a94a6ec632b703e8309e48')
