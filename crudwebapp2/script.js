@@ -1,20 +1,17 @@
 const formElements = Array.from(document.forms['form']);
 let selectedRow = undefined;
-let table = document.getElementById("users-table");
-const userId = "560862e7a4b54bee9a0d1f659d82740d";
+const table = document.getElementById("users-table");
+const userId = "f656b081889c493ba4c464af95e34388";
 let users = [];
 
 function submitForm() {
     if (selectedRow == undefined) {
         const user = readFormInputs();
         apiPost("https://crudcrud.com/api/"+ userId +"/unicorns", table.rows.length - 1, user.name, user.email, user.contact);
-        reloadTable();
     }
     else {
         editUser(readFormInputs());
     }
-
-    clearForm();
 }
 
 function addUser(user) {
@@ -39,27 +36,24 @@ function addUser(user) {
     let deleteCell = userRow.insertCell(5);
     deleteCell.textContent = "Delete";
     deleteCell.addEventListener("click", (event) => {
-        deleteUser(userRow.rowIndex)
+        selectedRow = userRow;
+        deleteUser();
     });
     deleteCell.style.color = "blue";
     deleteCell.style.textDecoration = "underline";
 }
 
-function deleteUser(row) {
+function deleteUser() {
     console.log("deleting")
-    const deletionId = users[row]._id;
-    apiDelete("https://crudcrud.com/api/"+ userId +"/unicorns", deletionId);
-    reloadTable();
-    clearForm();
+    const deletionId = users[selectedRow.rowIndex - 1]._id;
+    apiDelete("https://crudcrud.com/api/"+ userId +"/unicorns", deletionId)
 }
 
 function editUser(user) {
     console.log("editing")
-    selectedRow.cells[1].textContent = user.name;
-    selectedRow.cells[2].textContent = user.email;
-    selectedRow.cells[3].textContent = user.contact;
+    const updationId = users[selectedRow.rowIndex - 1]._id;
+    apiUpdate("https://crudcrud.com/api/"+ userId +"/unicorns", updationId, user.id, user.name, user.email, user.contact);
 
-    clearForm();
 }
 
 // Table methods
@@ -71,11 +65,8 @@ function reloadTable() {
         }
     })
 
-    apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
-    .then(() => {
-        users.forEach((user) => {
-            addUser(user);
-        })
+    users.forEach((user) => {
+        addUser(user);
     })
 }
 
@@ -138,6 +129,7 @@ const apiPost = async (url, p_id, p_name, p_email, p_contact) => {
 
         if (response.ok) {
             console.log("User added successfully");
+            apiRead();
         }
         else {
             console.log("Error adding user. Status:", response.status);
@@ -147,13 +139,16 @@ const apiPost = async (url, p_id, p_name, p_email, p_contact) => {
     }
 };
 
-const apiRead = async (url) => {
+const apiRead = async () => {
     try {
-        await fetch(url)
+        await fetch("https://crudcrud.com/api/"+ userId +"/unicorns")
             .then(response => response.json())
             .then(data => { 
                 console.log(data);
                 users = [...data];
+                reloadTable();
+                selectedRow = undefined;
+                clearForm();
             })
     }
     catch (error) {
@@ -162,8 +157,8 @@ const apiRead = async (url) => {
 
 }
 
-const apiUpdate = async (link, p_id, p_name, p_email, p_contact) => {
-    const url = `${link}/${objectId}`;
+const apiUpdate = async (link, updateId, p_id, p_name, p_email, p_contact) => {
+    const url = `${link}/${updateId}`;
 
     try {
         const response = await fetch(url, {
@@ -181,7 +176,7 @@ const apiUpdate = async (link, p_id, p_name, p_email, p_contact) => {
 
         if (response.ok) {
             console.log("User updated successfully");
-            apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
+            apiRead();
         }
         else {
             console.log("Error updating user. Status:", response.status);
@@ -197,18 +192,13 @@ const apiDelete = async (link, p_id) => {
     try {
         console.log(url);
         const response = await fetch(url, {
-            method: "DELETE",
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "DELETE",
-                "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, X-Requested-With"
-            }
+            method: "DELETE"
         });
 
         console.log(response);
         if (response.ok) {
             console.log("User deleted successfully.");
-            apiRead("https://crudcrud.com/api/"+ userId +"/unicorns")
+            apiRead();
         } else {
             console.log("Error deleting user. Status:", response.status);
         }
@@ -217,5 +207,4 @@ const apiDelete = async (link, p_id) => {
     }
 };
 
-
-reloadTable();
+apiRead();
