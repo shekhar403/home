@@ -111,7 +111,6 @@ function prefillForm() {
 
 // Network call
 
-
 const apiPost = async (url, p_id, p_name, p_email, p_contact) => {
     try {
         const response = await fetch(url, {
@@ -143,8 +142,7 @@ const apiRead = async () => {
     try {
         await fetch("https://crudcrud.com/api/"+ userId +"/unicorns")
             .then(response => response.json())
-            .then(data => { 
-                console.log(data);
+            .then(data => {
                 users = [...data];
                 reloadTable();
                 selectedRow = undefined;
@@ -154,7 +152,6 @@ const apiRead = async () => {
     catch (error) {
         console.log("Error:", error);
     }
-
 }
 
 const apiUpdate = async (link, updateId, p_id, p_name, p_email, p_contact) => {
@@ -190,12 +187,10 @@ const apiDelete = async (link, p_id) => {
     const url = `${link}/${p_id}`;
 
     try {
-        console.log(url);
         const response = await fetch(url, {
             method: "DELETE"
         });
 
-        console.log(response);
         if (response.ok) {
             console.log("User deleted successfully.");
             apiRead();
