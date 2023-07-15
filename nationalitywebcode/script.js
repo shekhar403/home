@@ -126,6 +126,7 @@ const apiRead = async (value) => {
     }
     catch (error) {
         console.log("Error:", error);
+        alert(`Error: ${error}`);
     }
 }
 
