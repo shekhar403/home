@@ -99,7 +99,9 @@ const apiRead = async (value) => {
         await fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                Array.from(tbody.children).forEach((child) => {
+                    child.remove();
+                })
 
                 data.forEach(word => {
                     const phonetic = word.phonetic;
