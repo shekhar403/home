@@ -100,6 +100,10 @@ const apiRead = async (value) => {
         await fetch(url)
             .then(response => response.json())
             .then(data => {
+                Array.from(tbody.children).forEach((child) => {
+                    child.remove();
+                })
+                
                 let countries = data.country;
                 let countries_mod = [countries[0], countries[1]];
                 
