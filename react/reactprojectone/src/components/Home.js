@@ -5,7 +5,7 @@ function Home({name, fname}) {
 
   return (
     <div className='Navbar'>
-        <h1 className='heading'>{fname}</h1>
+        <h1 className='heading'>{name}</h1>
         <hr></hr>
         <h2 className='section'>About me : </h2>
         <div className='container'>
